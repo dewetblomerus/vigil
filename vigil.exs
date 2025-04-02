@@ -17,7 +17,7 @@ defmodule Runner do
       System.cmd("say", ["-r", "50", "It's alive!"])
     end
 
-    Process.sleep(2000)
+    Process.sleep(5000)
     run(new_status)
   end
 end
