@@ -1,8 +1,13 @@
-Mix.install([
-  {:req, "~> 0.5"}
-])
+defmodule Vigil do
+  @moduledoc """
+  Supervised Task
+  """
+  use Task, restart: :permanent
 
-defmodule Runner do
+  def start_link(_) do
+    Task.start_link(__MODULE__, :run, [1000])
+  end
+
   def run(old_status \\ nil) do
     new_status =
       case Req.get("http://localhost:4999/probes/liveness", retry: false) do
@@ -22,16 +27,3 @@ defmodule Runner do
     run(new_status)
   end
 end
-
-children = [
-  {Task.Supervisor, name: Allow.TaskSupervisor}
-]
-
-Supervisor.start_link(children, strategy: :one_for_one)
-
-Task.Supervisor.async(Allow.TaskSupervisor, fn ->
-  dbg("Starting Vigil 🔭")
-  Runner.run()
-end)
-
-Process.sleep(:infinity)

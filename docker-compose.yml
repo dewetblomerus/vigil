@@ -1,8 +1,0 @@
-services:
-  app:
-    image: hexpm/elixir:1.18.2-erlang-27.2.1-debian-bookworm-20250113-slim
-    restart: unless-stopped
-    volumes:
-      - .:/app
-    working_dir: /app
-    command: elixir vigil.exs
