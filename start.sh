@@ -1,1 +1,1 @@
-_build/dev/rel/vigil/bin/vigil daemon
+~/code/elixir/vigil/_build/dev/rel/vigil/bin/vigil daemon
