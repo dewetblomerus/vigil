@@ -18,7 +18,7 @@ defmodule Vigil do
     dbg("Current status: #{new_status}")
 
     if old_status == :dead && new_status == :alive do
-      Process.sleep(5000)
+      Process.sleep(4000)
       System.cmd("say", ["-r", "150", "It's alive!"])
       System.cmd("say", ["-r", "50", "It's alive!"])
     end
