@@ -2,6 +2,12 @@
 
 ## Installation
 
+Clone into the following local directory `~/code/elixir` so that this readme
+ens up in
+`~/code/elixir/vigil`
+
+Run `mix release`
+
 Put the following in your `zshrc` or `bashrc`
 
 ```bash
@@ -12,7 +18,3 @@ if [[ $- == *i* ]]; then
   fi
 fi
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/vigil>.
