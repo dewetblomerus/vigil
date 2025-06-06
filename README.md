@@ -1,21 +1,18 @@
 # Vigil
 
-**TODO: Add description**
-
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `vigil` to your list of dependencies in `mix.exs`:
+Put the following in your `zshrc` or `bashrc`
 
-```elixir
-def deps do
-  [
-    {:vigil, "~> 0.1.0"}
-  ]
-end
+```bash
+# Automatically start vigil on terminal startup if not already running
+if [[ $- == *i* ]]; then
+  if ! pgrep -f "vigil/start.sh" > /dev/null 2>&1; then
+    ~/code/elixir/vigil/start.sh &
+  fi
+fi
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/vigil>.
-
